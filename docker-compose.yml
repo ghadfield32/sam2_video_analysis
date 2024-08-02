@@ -1,0 +1,25 @@
+# docker-compose.yml changes
+services:
+  datascience:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        ENV_NAME: data_science_sam2
+        PYTHON_VER: 3.10
+    volumes:
+      - .:/workspace
+    ports:
+      - "8888:8888"  # For Jupyter Notebook
+      - "6006:6006"  # For TensorBoard
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - ENV_NAME=data_science_sam2
+      - PYTHON_VER=3.10
+    command: ["conda", "run", "-n", "data_science_sam2", "jupyter", "lab", "--ip", "0.0.0.0", "--port", "8888", "--no-browser", "--allow-root"]

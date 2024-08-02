@@ -1,0 +1,17 @@
+https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/how-to-segment-images-with-sam-2.ipynb
+
+
+https://blog.roboflow.com/what-is-segment-anything-2/
+
+https://ai.meta.com/blog/segment-anything-2/
+
+
+
+
+
+https://stackoverflow.com/questions/23119413/how-do-i-install-python-opencv-through-conda/53803646
+
+https://stackoverflow.com/questions/36862589/install-opencv-in-a-docker-container
+
+
+
