@@ -53,7 +53,7 @@ RUN conda env create -f /tmp/environment.yml && \
 
 # Install PyTorch and other packages
 RUN conda run -n $ENV_NAME pip install --no-cache-dir --upgrade pip \
-    && conda run -n $ENV_NAME pip install --no-cache-dir torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121 \
+    && conda run -n $ENV_NAME pip install --no-cache-dir torch>=2.3.1 torchvision>=0.18.1 torchaudio --index-url https://download.pytorch.org/whl/cu121 \
     && conda run -n $ENV_NAME pip install --no-cache-dir opencv-python-headless ultralytics supervision
 
 # Verify OpenCV installation
